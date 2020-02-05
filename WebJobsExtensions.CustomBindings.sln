@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29521.150
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5A3231C6-9063-44A0-813A-F608169B2F13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebJobsExtensions.CustomBindings.Slack", "src\WebJobsExtensions.CustomBindings.Slack\WebJobsExtensions.CustomBindings.Slack.csproj", "{E834D189-1A66-4DD3-891D-D9A6AB11A170}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sandbox", "sandbox", "{0DB50DE6-4FB1-494A-8306-FD630CC8C72F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CD7DDF0F-291C-479A-929F-D43FFF39F40D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebJobsExtensions.CustomBindings.Slack.Tests", "test\WebJobsExtensions.CustomBindings.Slack.Tests\WebJobsExtensions.CustomBindings.Slack.Tests.csproj", "{AC4F24E5-B59B-4D67-BD97-3E0305E4A6BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandboxFunctionApp", "sandbox\SandboxFunctionApp\SandboxFunctionApp.csproj", "{79834E2F-7E21-4D15-8B05-88D0C0E0E0BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E834D189-1A66-4DD3-891D-D9A6AB11A170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E834D189-1A66-4DD3-891D-D9A6AB11A170}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E834D189-1A66-4DD3-891D-D9A6AB11A170}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E834D189-1A66-4DD3-891D-D9A6AB11A170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC4F24E5-B59B-4D67-BD97-3E0305E4A6BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC4F24E5-B59B-4D67-BD97-3E0305E4A6BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC4F24E5-B59B-4D67-BD97-3E0305E4A6BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC4F24E5-B59B-4D67-BD97-3E0305E4A6BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79834E2F-7E21-4D15-8B05-88D0C0E0E0BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79834E2F-7E21-4D15-8B05-88D0C0E0E0BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79834E2F-7E21-4D15-8B05-88D0C0E0E0BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79834E2F-7E21-4D15-8B05-88D0C0E0E0BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E834D189-1A66-4DD3-891D-D9A6AB11A170} = {5A3231C6-9063-44A0-813A-F608169B2F13}
+		{AC4F24E5-B59B-4D67-BD97-3E0305E4A6BE} = {CD7DDF0F-291C-479A-929F-D43FFF39F40D}
+		{79834E2F-7E21-4D15-8B05-88D0C0E0E0BA} = {0DB50DE6-4FB1-494A-8306-FD630CC8C72F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CFA0FC2-6EC2-4B1B-89F4-B0BD28484A4C}
+	EndGlobalSection
+EndGlobal
