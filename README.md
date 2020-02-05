@@ -45,4 +45,4 @@ You can try to build the BlockKit fromat : <https://api.slack.com/tools/block-ki
 ## More Information: My blog posts
 
 - [Setup Incoming Webhook on Slack](https://blog.beachside.dev/entry/2020/01/30/223000)
-- [How to create Custom Bindings for Slack](https://blog.beachside.dev/entry/2020/02/05/193000)
+- [How to create Custom Bindings for Slack](https://blog.beachside.dev/entry/2020/02/05/200000)
