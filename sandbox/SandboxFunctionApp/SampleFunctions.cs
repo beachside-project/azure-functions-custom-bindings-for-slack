@@ -33,23 +33,26 @@ namespace SandboxFunctionApp
             [Slack(IncomingWebhookUrl = "%Slack:IncomingWebhookUrl%")]IAsyncCollector<string> asyncCollector,
             ILogger log)
         {
-            var title = "*#14 How to use Worker Services?*";
+            var title = "*#28 App Service サイコーです！*";
             var description = "xxx で更新がありました。";
             var eventName = "Added Timeline";
-            var updater = "鈴木イチロー";
-            var detail = "xxx の動作はxxx から起動します...";
+            var updater = "GEEK: 鈴木イチロー ";
+            var detail = "WebAppsにデプロイしたアプリケーションにブラウザからアクセスした際に HTTP応答431 Request Header Fields Too Large が返され、アクセスが失敗する場合があります。 対処方法を教えてください。後のコメントで、違う端末から次のAPIにアクセスした際のHTTPヘッダを記載します...";
 
-            var image = @"https://www.techielass.com/wp-content/uploads/2019/09/Microsoft-Azure-Cloud-Advocate-300x300.jpg";
 
-            var payload = SlackMessageHelper.CreateEventNotificationMessage(
+            var buttonLink = @"http://docs.microsoft.com/";
+
+            var payload = SlackMessageHelper.CreateEventNotificationMessageSample(
                 title,
                 "View More",
-                image,
+                buttonLink,
                 description,
                 eventName,
                 updater,
                 detail
             );
+
+
 
             await asyncCollector.AddAsync(payload);
 

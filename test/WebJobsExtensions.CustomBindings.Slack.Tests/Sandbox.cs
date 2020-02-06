@@ -17,7 +17,7 @@ namespace WebJobsExtensions.CustomBindings.Slack.Tests
             var image = @"https://www.techielass.com/wp-content/uploads/2019/09/Microsoft-Azure-Cloud-Advocate-300x300.jpg";
 
 
-            var message = SlackMessageHelper.CreateEventNotificationMessage(
+            var message = SlackMessageHelper.CreateEventNotificationMessageSample(
                 title,
                 "View More",
                 image,
