@@ -3,7 +3,7 @@ using WebJobsExtensions.CustomBindings.Slack.Config;
 
 namespace WebJobsExtensions.CustomBindings.Slack.Bindings
 {
-    internal class SlackAsyncCollectorBuilder : IConverter<SlackAttribute, IAsyncCollector<string>>
+    internal class SlackAsyncCollectorBuilder<T> : IConverter<SlackAttribute, IAsyncCollector<T>>
     {
         private readonly SlackExtensionConfigProvider _slackExtensionConfigProvider;
 
@@ -12,9 +12,9 @@ namespace WebJobsExtensions.CustomBindings.Slack.Bindings
             _slackExtensionConfigProvider = slackExtensionConfigProvider;
         }
 
-        public IAsyncCollector<string> Convert(SlackAttribute attribute)
+        public IAsyncCollector<T> Convert(SlackAttribute attribute)
         {
-            var collector = _slackExtensionConfigProvider.CreateCollector(attribute);
+            var collector = _slackExtensionConfigProvider.CreateCollector<T>(attribute);
             return collector;
         }
     }

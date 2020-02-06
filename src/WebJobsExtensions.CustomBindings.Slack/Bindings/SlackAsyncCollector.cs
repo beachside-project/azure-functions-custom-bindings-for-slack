@@ -5,7 +5,7 @@ using WebJobsExtensions.CustomBindings.Slack.Client;
 
 namespace WebJobsExtensions.CustomBindings.Slack.Bindings
 {
-    internal class SlackAsyncCollector : IAsyncCollector<string>
+    internal class SlackAsyncCollector<T> : IAsyncCollector<T>
     {
         private readonly ISlackClient _slackClient;
 
@@ -14,7 +14,7 @@ namespace WebJobsExtensions.CustomBindings.Slack.Bindings
             _slackClient = slackClient;
         }
 
-        public async Task AddAsync(string payload, CancellationToken cancellationToken = new CancellationToken())
+        public async Task AddAsync(T payload, CancellationToken cancellationToken = new CancellationToken())
         {
             await _slackClient.SendMessageAsync(payload);
         }

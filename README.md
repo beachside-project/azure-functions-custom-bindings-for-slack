@@ -25,13 +25,28 @@ Functions App use environment valiable "Slack:IncomingWebhookUrl", so need to se
 }
 ```
 
+(This may not be used depending on usage. Usage describe "How to use" section.)
+
 ### For Running on Azure
 
 - Set "Slack:IncomingWebhookUrl" key and value to Application settings.
 
+(This may not be used depending on usage. Usage describe "How to use" section.)
+
 ## How to use
 
-Sample Function App is [here](./sandbox/SandboxFunctionApp)
+There are two ways to get Slack-IncomingWebhookUrl.
+
+- Pattern1: Set Slack-IncomingWebhookUrl to environment valiable and get from it.
+- Pattern2: get lack-IncomingWebhookUrl from Function method input.
+
+In [SandboxFunctionApp](./sandbox/SandboxFunctionApp),  
+Function1 and Function2 is Pattern1.  
+Function3 is Pattern2.
+
+Pattern1 and Pattern2 cannot coexist in same function instance because of Attribute and Collector Dependency.  
+Please refer to sample code for usage: [SandboxFunctionApp](./sandbox/SandboxFunctionApp).
+
 
 ## How to Create BlockKit Message
 

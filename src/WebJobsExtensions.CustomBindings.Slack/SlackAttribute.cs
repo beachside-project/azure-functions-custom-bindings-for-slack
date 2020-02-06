@@ -7,7 +7,12 @@ namespace WebJobsExtensions.CustomBindings.Slack
     [Binding]
     public sealed class SlackAttribute : Attribute
     {
-        [AppSetting(Default = "Slack:IncomingWebhookUrl")]
+        [AutoResolve]
         public string IncomingWebhookUrl { get; set; }
+
+        [AutoResolve]
+        public string IsDynamicUrl { get; set; } = "false";
+
+        public bool IsDynamic => Convert.ToBoolean(IsDynamicUrl);
     }
 }

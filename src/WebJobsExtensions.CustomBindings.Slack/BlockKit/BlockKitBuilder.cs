@@ -9,7 +9,6 @@ namespace WebJobsExtensions.CustomBindings.Slack.BlockKit
 
         public void AddBlockJson(string json)
         {
-
             _blockItems.Add(json);
         }
 
