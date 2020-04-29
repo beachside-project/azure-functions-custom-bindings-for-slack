@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.3.0</Version>
+    <Version>0.3.1</Version>
     <Authors>Atsushi Yokohama</Authors>
     <Company>Atsushi Yokohama</Company>
     <PackageTags>Azure;AzureFunctions;Slack</PackageTags>
@@ -10,6 +10,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>    
     <PackageProjectUrl>https://github.com/beachside-project/azure-functions-custom-bindings-for-slack</PackageProjectUrl>
     <RepositoryUrl>https://github.com/beachside-project/azure-functions-custom-bindings-for-slack</RepositoryUrl>
+    <Description>Azure Functions custom bindings extension for Slack notification.</Description>
   </PropertyGroup>
 
   <ItemGroup>
