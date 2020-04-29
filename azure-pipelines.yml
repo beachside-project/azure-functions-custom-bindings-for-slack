@@ -1,0 +1,61 @@
+trigger:
+  tags:
+    include:
+    - v*
+  branches:
+    include:
+    - master
+
+variables:
+  vmImageOfBuild: windows-2019
+  buildConfiguration: Release
+  buildProject: src/WebJobsExtensions.CustomBindings.Slack/WebJobsExtensions.CustomBindings.Slack.csproj
+  testProjects: test/**/*.csproj
+
+stages:
+- stage: build_test_stage
+  displayName: Buid / Test
+  condition: in(variables['Build.Reason'], 'PullRequest', 'Manual')
+  jobs:
+  - job: test_job
+    displayName: Test
+    pool:
+      vmImage: $(vmImageOfBuild)
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: Test
+      inputs:
+        command: 'test'
+        projects: $(testProjects)
+        testRunTitle: 'run tests'
+
+- stage: push_stage
+  displayName: Publish to Azure Artifacts
+  condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/v')
+  jobs:
+  - job: pack_job
+    displayName: Pack and Push
+    pool:
+      vmImage: $(vmImageOfBuild)
+    steps:
+    - task: DotNetCoreCLI@2
+      displayName: 'DotNetCoreCLI@2: build'
+      inputs:
+        command: 'build'
+        projects: '$(buildProject)'
+        arguments: '--configuration $(buildConfiguration)'
+    - task: DotNetCoreCLI@2
+      displayName: 'DotNetCoreCLI@2: pack'
+      inputs:
+        command: 'pack'
+        packagesToPack: '$(buildProject)'
+        configuration: '$(buildConfiguration)'
+        nobuild: true
+        versioningScheme: 'off'
+    - task: DotNetCoreCLI@2
+      displayName: 'DotNetCoreCLI@2: push'
+      inputs:
+        command: 'push'
+        packagesToPush: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+        nuGetFeedType: 'internal'
+        publishVstsFeed: '4b0a92c6-28ec-45d8-b044-b37411c9af60'
