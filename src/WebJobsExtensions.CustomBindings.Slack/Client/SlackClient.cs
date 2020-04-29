@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using WebJobsExtensions.CustomBindings.Slack.Models;
 
 namespace WebJobsExtensions.CustomBindings.Slack.Client
 {
