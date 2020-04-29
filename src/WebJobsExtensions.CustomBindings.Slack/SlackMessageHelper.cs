@@ -9,7 +9,7 @@ namespace WebJobsExtensions.CustomBindings.Slack
         private const string EventNotificationMessageTemplate = "{0} \n\n *Event:*       {1} \n *Updater:*  {2}";
         private const string EventNotificationMessageTemplate2 = "*Event:*       {0} \n *Updater:*  {1} \n*Detail:* \n {2}  ";
         private const string AdditionalMessageTemplate = " \n *Timeline:*  {0}";
-        private const string SampleAccessoryImageUrl = @"https://www.techielass.com/wp-content/uploads/2019/09/Microsoft-Azure-Cloud-Advocate-300x300.jpg";
+        private const string SampleAccessoryImageUrl = @"https://raw.githubusercontent.com/beachside-project/azure-functions-custom-bindings-for-slack/master/sandbox/sample-images/Microsoft-Azure-Cloud-Advocate-300x300.jpg";
 
 
         /// <summary>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net.Http;
 using WebJobsExtensions.CustomBindings.Slack.Bindings;
 using WebJobsExtensions.CustomBindings.Slack.Client;
+using WebJobsExtensions.CustomBindings.Slack.Models;
 
 namespace WebJobsExtensions.CustomBindings.Slack.Config
 {

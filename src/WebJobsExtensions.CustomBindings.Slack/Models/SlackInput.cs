@@ -1,4 +1,4 @@
-﻿namespace WebJobsExtensions.CustomBindings.Slack
+﻿namespace WebJobsExtensions.CustomBindings.Slack.Models
 {
     public class SlackInput
     {
