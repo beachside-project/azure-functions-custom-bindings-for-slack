@@ -4,8 +4,8 @@ namespace WebJobsExtensions.CustomBindings.Slack.BlockKit
 {
     public class BlockKitBuilder
     {
-        private const string Separator = ",";
-        private readonly List<string> _blockItems = new List<string>();
+        protected const string Separator = ",";
+        protected readonly List<string> _blockItems = new List<string>();
 
         public void AddBlockJson(string json)
         {
@@ -19,7 +19,7 @@ namespace WebJobsExtensions.CustomBindings.Slack.BlockKit
         /// <remarks>
         /// You can validate the generated payload: https://api.slack.com/tools/block-kit-builder.
         /// </remarks>
-        public string ToBuildJson()
+        public virtual string ToBuildJson()
         {
             // TODO: validation
             var items = string.Join(Separator, _blockItems);

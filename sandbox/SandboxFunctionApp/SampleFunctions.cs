@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
 using WebJobsExtensions.CustomBindings.Slack;
+using WebJobsExtensions.CustomBindings.Slack.BlockKit;
 
 namespace SandboxFunctionApp
 {
@@ -16,7 +17,7 @@ namespace SandboxFunctionApp
         [FunctionName("Function1")]
         public async Task<IActionResult> SendSimpleText(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
-            [Slack(IncomingWebhookUrl = "%Slack:IncomingWebhookUrl%")]IAsyncCollector<string> asyncCollector,
+            [Slack(IncomingWebhookUrl = "%Slack:IncomingWebhookUrl%")] IAsyncCollector<string> asyncCollector,
             ILogger log)
         {
             var text = $"Hello *Slack*: {DateTime.Now}";
@@ -30,7 +31,7 @@ namespace SandboxFunctionApp
         [FunctionName("Function2")]
         public async Task<IActionResult> SendBlockKitFormat(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
-            [Slack(IncomingWebhookUrl = "%Slack:IncomingWebhookUrl%")]IAsyncCollector<string> asyncCollector,
+            [Slack(IncomingWebhookUrl = "%Slack:IncomingWebhookUrl%")] IAsyncCollector<string> asyncCollector,
             ILogger log)
         {
             var title = "*#28 App Service サイコーです！*";
@@ -52,7 +53,23 @@ namespace SandboxFunctionApp
                 detail
             );
 
+            await asyncCollector.AddAsync(payload);
 
+            return new OkObjectResult("Hello");
+        }
+
+        [FunctionName("Function3")]
+        public async Task<IActionResult> SendAttachment(
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+            [Slack(IncomingWebhookUrl = "%Slack:IncomingWebhookUrl%")] IAsyncCollector<string> asyncCollector,
+            ILogger log)
+        {
+            var text = $"Hello *Slack*: {DateTime.Now}";
+
+            var payload = new BlockKitAttachmentBuilder("#65ACB4")
+                .AddMarkdownBlock(":pushpin: " + text)
+                .AddLinkButtonBlock("Go to Docs", "https://docs.microsoft.com/")
+                .ToBuildJson();
 
             await asyncCollector.AddAsync(payload);
 
