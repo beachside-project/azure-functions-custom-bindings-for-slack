@@ -5,8 +5,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.Storage" Version="3.0.11" />
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.6" />
-    <PackageReference Include="WebJobsExtensions.CustomBindings.Slack" Version="0.3.0" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.11" />
+    <PackageReference Include="WebJobsExtensions.CustomBindings.Slack" Version="0.4.0" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">

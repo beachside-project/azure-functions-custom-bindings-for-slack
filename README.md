@@ -61,3 +61,9 @@ You can try to build the BlockKit fromat : <https://api.slack.com/tools/block-ki
 
 - [Setup Incoming Webhook on Slack](https://blog.beachside.dev/entry/2020/01/30/223000)
 - [How to create Custom Bindings for Slack](https://blog.beachside.dev/entry/2020/02/05/200000)
+
+
+
+## 個人用メモ: Azure Artifacts feed
+
+Azure DevOps > beachside > nuget-feed project にて public feed を利用中。
